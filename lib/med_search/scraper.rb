@@ -8,10 +8,14 @@ class MedSearch::Scraper
     doc = Nokogiri::HTML(html)
     drug_url = "https://www.goodrx.com/#{input}"
     dosage = doc.css('#uat-dropdown-dosage').text
-    quantity = doc.css()
-    puts dosage
-    puts "You want to learn about #{input.capitalize}"
-    puts "#{input.capitalize} is also known as #{doc.css('#uat-drug-alternatives a').text}"
+    quantity = doc.css('#uat-dropdown-quantity').text
+    drugs = []
+     doc.css('#uat-drug-alternatives a').each do |drug|
+     drugs << drug.text
+    end
+    drugs_list = drugs.uniq
+
+
 
   end
 
