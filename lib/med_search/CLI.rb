@@ -2,15 +2,22 @@
 require 'pry'
 class MedSearch::CLI
 
+
+
+
 def call
-puts "I work!  Would you like to look up a medication?"
+greeting
 input = drug_query
 if input == 'quit'
   goodbye
 else
-send_info(input)
+MedSearch::Scraper.send_info(input)
 second_call
 end
+end
+
+def greeting
+  puts "Welcome to Med Search!"
 end
 
 def second_call
@@ -30,6 +37,8 @@ end
 
 def send_info(input)
   #returns the drug info that the user is looking for
+  #this method might belong better in the scraper class and then I will call it with Scraper.send_info(drug)
+  #this will eventually take the input and put it at the end of the URL we need to scrap
   puts "Here is a description of the drug."
   puts "You want to learn about #{input}"
 end
