@@ -25,7 +25,7 @@ def second_call
   if input == 'quit'
     goodbye
   else
-  send_info(input)
+  MedSearch::Scraper.send_info(input)
   second_call
   end
 end
