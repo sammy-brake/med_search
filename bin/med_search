@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require "./lib/med_search"
+
 MedSearch::CLI.new.call
