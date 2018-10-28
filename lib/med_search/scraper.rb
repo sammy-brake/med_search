@@ -4,8 +4,12 @@ class MedSearch::Scraper
     #returns the drug info that the user is looking for
     #this method might belong better in the scraper class and then I will call it with Scraper.send_info(drug)
     #this will eventually take the input and put it at the end of the URL we need to scrap
+    html = open("https://www.goodrx.com/#{input}")
+    doc = Nokogiri::HTML(html)
     puts "Here is a description of the drug."
     puts "You want to learn about #{input}"
+    puts doc
+
   end
 
 end
