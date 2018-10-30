@@ -1,9 +1,10 @@
 class MedSearch::Scraper
+attr_accessor :drug_hash
 
-  def self.send_info(input)
-    #returns the drug info that the user is looking for
-    #this method might belong better in the scraper class and then I will call it with Scraper.send_info(drug)
-    #this will eventually take the input and put it at the end of the URL we need to scrap
+
+
+  def self.scrape_info(input)
+    #this method scrapes goodrx.com for information about the drug the user has inputted and it creates a hash of attributes.
     html = open("https://www.goodrx.com/#{input}")
     doc = Nokogiri::HTML(html)
     drug_hash = {}
@@ -22,9 +23,7 @@ class MedSearch::Scraper
     drug_hash[:dosage] = dosage
     drug_hash[:quantity] = quantity
     drug_hash[:description] = description
-
-    puts drug_hash
-
+    object_name = input
+    object_name = MedSearch::Drug.new(drug_hash)
   end
-
 end

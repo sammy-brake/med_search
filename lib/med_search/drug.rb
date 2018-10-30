@@ -1,5 +1,5 @@
 class MedSearch::Drug
-  attr_accessor :drug_url, :description, :dosage, :quantity, :alternatives, :name
+  attr_accessor :drug_url, :description, :dosage, :quantity, :drugs_list, :drug_name
 
   @@all = []
 
@@ -8,5 +8,15 @@ class MedSearch::Drug
      self.send("#{attribute}=", value)
    end
    @@all << self
+  end
+
+  def previous_drug?
+
+  end
+
+  def drugs_researched
+    @@all.each do |drug|
+      drug.name
+    end
   end
 end

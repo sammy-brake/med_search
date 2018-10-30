@@ -4,12 +4,15 @@ class MedSearch::CLI
 
 def call
 greeting
-input = drug_query
+input = options_query
 if input == 'quit'
   goodbye
+elsif input == 'list'
+    MedSearch::Drug.drugs_researched
+    next_call
 else
-MedSearch::Scraper.send_info(input)
-second_call
+MedSearch::Scraper.scrape_info(input)
+next_call
 end
 end
 
@@ -17,24 +20,28 @@ def greeting
   puts "Welcome to Med Search!"
 end
 
-def second_call
-  input = drug_query
+def next_call
+  input = options_query
   if input == 'quit'
     goodbye
+  elsif input == 'list'
+      drugs_researched
+      next_call
   else
-  MedSearch::Scraper.send_info(input)
-  second_call
+  MedSearch::Scraper.scrape_info(input)
+  next_call
   end
 end
 
-def drug_query
-  puts "Enter the name of the medication you are interested in learning about or enter quit to exit:"
+def options_query
+  puts "Here are your options:"
+  puts "If you would like to learn information about a medication, enter the name:"
+  puts "If you would like to see a list of previously researched medications, enter list:"
+  puts "Type quit if you would like to exit the program."
   input = gets.strip
 end
 
 def goodbye
   puts "Goodbye!"
 end
-
-
 end
