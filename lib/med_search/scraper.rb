@@ -1,8 +1,6 @@
 class MedSearch::Scraper
 attr_accessor :drug_hash
 
-
-
   def self.scrape_info(input)
     #this method scrapes goodrx.com for information about the drug the user has inputted and it creates a hash of attributes.
     html = open("https://www.goodrx.com/#{input}")
