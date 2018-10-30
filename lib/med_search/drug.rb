@@ -22,4 +22,7 @@ class MedSearch::Drug
     @@all.find {|drug| drug.drug_name == drug_name}
   end
 
+  def self.find_or_instantiate(drug_name)
+    self.find_by_drug_name || MedSearch::Scraper
+
 end
