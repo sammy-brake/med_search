@@ -26,4 +26,18 @@ class MedSearch::Drug
     self.find_by_drug_name(drug_name) || MedSearch::Scraper.scrape_info(drug_name)
   end
 
+  def self.drug_info(input)
+    @@all.each do |drug|
+      if drug.drug_name == input
+    puts "-------------------------------------"
+    puts "     #{input.capitalize}     "
+    puts "This medication is also known as #{drug.drugs_list}"
+    puts drug.description
+    puts "The common dosage for this medication is #{drug.dosage}"
+    puts "the common prescribed quantity for this medication is #{drug.quantity}"
+    puts "Visit #{drug.drug_url} for more information."
+  end
+end
+end
+
 end

@@ -12,6 +12,7 @@ elsif input == 'list'
     next_call
 else
 MedSearch::Drug.find_or_instantiate(input)
+MedSearch::Drug.drug_info(input)
 next_call
 end
 end
@@ -28,7 +29,9 @@ def next_call
       MedSearch::Drug.drugs_researched
       next_call
   else
+
   MedSearch::Drug.find_or_instantiate(input)
+ MedSearch::Drug.drug_info(input)
   next_call
   end
 end
@@ -40,6 +43,8 @@ def options_query
   puts "Type quit if you would like to exit the program."
   input = gets.strip
 end
+
+
 
 def goodbye
   puts "Goodbye!"
