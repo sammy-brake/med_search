@@ -2,9 +2,6 @@
 require 'pry'
 class MedSearch::CLI
 
-
-
-
 def call
 greeting
 input = drug_query

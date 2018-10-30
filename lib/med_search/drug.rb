@@ -1,5 +1,5 @@
 class MedSearch::Drug
-  attr_accessor :drug_url, :description, :dosage, :quantity, :alternatives
+  attr_accessor :drug_url, :description, :dosage, :quantity, :alternatives, :name
 
   @@all = []
 

@@ -16,11 +16,13 @@ class MedSearch::Scraper
     dosage = doc.css('#uat-dropdown-dosage').text
     quantity = doc.css('#uat-dropdown-quantity').text
     description = doc.css('#uat-drug-info').text
+    drug_hash[:drug_name] = input
     drug_hash[:drugs_list] = drugs_list
     drug_hash[:drug_url] = drug_url
     drug_hash[:dosage] = dosage
     drug_hash[:quantity] = quantity
     drug_hash[:description] = description
+
     puts drug_hash
 
   end
