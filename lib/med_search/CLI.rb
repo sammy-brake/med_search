@@ -11,7 +11,7 @@ elsif input == 'list'
     MedSearch::Drug.drugs_researched
     next_call
 else
-MedSearch::Scraper.scrape_info(input)
+MedSearch::Drug.find_or_instantiate(drug_name)
 next_call
 end
 end
@@ -28,7 +28,7 @@ def next_call
       MedSearch::Drug.drugs_researched
       next_call
   else
-  MedSearch::Scraper.scrape_info(input)
+  MedSearch::Drug.find_or_instantiate(drug_name)
   next_call
   end
 end

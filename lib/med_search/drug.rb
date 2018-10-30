@@ -23,6 +23,7 @@ class MedSearch::Drug
   end
 
   def self.find_or_instantiate(drug_name)
-    self.find_by_drug_name || MedSearch::Scraper
+    self.find_by_drug_name || MedSearch::Scraper.scrape_info(drug_name)
+  end
 
 end
