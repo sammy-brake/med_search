@@ -25,7 +25,7 @@ def next_call
   if input == 'quit'
     goodbye
   elsif input == 'list'
-      drugs_researched
+      MedSearch::Drug.drugs_researched
       next_call
   else
   MedSearch::Scraper.scrape_info(input)

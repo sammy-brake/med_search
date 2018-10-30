@@ -10,13 +10,12 @@ class MedSearch::Drug
    @@all << self
   end
 
-  def previous_drug?
 
-  end
-
-  def drugs_researched
-    @@all.each do |drug|
-      drug.name
+  def self.drugs_researched
+    puts "------------------------------------------"
+    puts "    Previously Researched Medications"
+    @@all.each.with_index(1) do |drug, index|
+      puts "#{index}. #{drug.drug_name.capitalize}"
     end
   end
 end
