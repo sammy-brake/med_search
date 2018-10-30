@@ -11,11 +11,12 @@ class MedSearch::Drug
   end
 
   def self.drugs_researched
-    puts "------------------------------------------"
+    puts "------------------------------------------".colorize(:red)
     puts "    Previously Researched Medications"
     @@all.each.with_index(1) do |drug, index|
       puts "#{index}. #{drug.drug_name.capitalize}"
     end
+    puts "------------------------------------------".colorize(:red)
   end
 
   def self.find_by_drug_name(drug_name)
@@ -29,12 +30,13 @@ class MedSearch::Drug
   def self.drug_info(input)
     @@all.each do |drug|
       if drug.drug_name == input
-    puts "-------------------------------------"
-    puts "     #{input.capitalize}     "
-    puts "This medication is also known as #{drug.drugs_list.join(", ")}."
+    puts "-------------------------------------".colorize(:red)
+    puts "         #{input.capitalize}     ".colorize(:cyan)
+    puts "This medication is also known as: #{drug.drugs_list.join(", ").colorize(:cyan)}."
     puts drug.description
     puts "The most common dosage for this medication is #{drug.dosage}in a quantity of #{drug.quantity}"
-    puts "Visit #{drug.drug_url} for more information."
+    puts "Visit #{drug.drug_url} for more information.".colorize(:blue)
+    puts "-------------------------------------".colorize(:red)
   end
 end
 end

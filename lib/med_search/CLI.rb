@@ -24,7 +24,7 @@ end
 end
 
 def greeting
-  puts "Welcome to Med Search!"
+  puts "Welcome to Med Search!".colorize(:red)
 end
 
 def next_call
@@ -49,10 +49,10 @@ end
 
 
 def options_query
-  puts "Here are your options:"
-  puts "You can enter the name of a medication to learn more information about it.".colorize(:light_blue)
-  puts "Enter list to see all previously researched medications.".colorize(:blue)
-  puts "Type quit if you would like to exit the program.".colorize(:cyan)
+  puts "Here are your options:".colorize(:color => :green)
+  puts "You can enter the" + " name of a medication".colorize(:blue) + " to learn more information about it."
+  puts "Enter" + " list ".colorize(:blue) + "to see all previously researched medications."
+  puts "Enter" + " quit ".colorize(:blue) + "if you would like to exit the program."
   input = gets.strip
 end
 
