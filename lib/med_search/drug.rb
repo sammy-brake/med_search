@@ -31,10 +31,9 @@ class MedSearch::Drug
       if drug.drug_name == input
     puts "-------------------------------------"
     puts "     #{input.capitalize}     "
-    puts "This medication is also known as #{drug.drugs_list}"
+    puts "This medication is also known as #{drug.drugs_list.join(", ")}."
     puts drug.description
-    puts "The common dosage for this medication is #{drug.dosage}"
-    puts "the common prescribed quantity for this medication is #{drug.quantity}"
+    puts "The most common dosage for this medication is #{drug.dosage}in a quantity of #{drug.quantity}"
     puts "Visit #{drug.drug_url} for more information."
   end
 end
