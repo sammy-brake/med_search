@@ -21,7 +21,6 @@ attr_accessor :drug_hash
     drug_hash[:dosage] = dosage
     drug_hash[:quantity] = quantity
     drug_hash[:description] = description
-    object_name = input
-    object_name = MedSearch::Drug.new(drug_hash)
+     MedSearch::Drug.new(drug_hash)
   end
 end

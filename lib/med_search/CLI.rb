@@ -14,7 +14,7 @@ else
   begin
    MedSearch::Drug.find_or_instantiate(input)
    rescue
-        puts "I'm sorry, that medication doesn't exist in our database.  Please check your spelling and try again."
+        puts "I'm sorry, that medication doesn't exist in our database.  Please check your spelling and try again.".colorize(:red)
          next_call
    else
   MedSearch::Drug.drug_info(input)
@@ -38,7 +38,7 @@ def next_call
      begin
        MedSearch::Drug.find_or_instantiate(input)
    rescue
-      puts "I'm sorry, that medication doesn't exist in our database.  Please check your spelling and try again."
+      puts "I'm sorry, that medication doesn't exist in our database.  Please check your spelling and try again.".colorize(:red)
       next_call
     else
   MedSearch::Drug.drug_info(input)
@@ -57,6 +57,6 @@ def options_query
 end
 
 def goodbye
-  puts "Goodbye!"
+  puts "Goodbye!".colorize(:red)
 end
 end

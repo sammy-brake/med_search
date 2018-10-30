@@ -1,9 +1,6 @@
 # MedSearch
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/med_search`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
+Welcome to MedSearch!  This gem can return the description, alternate names, commonly prescribed dosage and quantity, and a website to go to for more information about the medicine.  
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +19,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem can be used to access information for different medications.
 
 ## Development
 
