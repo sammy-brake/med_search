@@ -10,7 +10,6 @@ class MedSearch::Drug
    @@all << self
   end
 
-
   def self.drugs_researched
     puts "------------------------------------------"
     puts "    Previously Researched Medications"
@@ -18,4 +17,9 @@ class MedSearch::Drug
       puts "#{index}. #{drug.drug_name.capitalize}"
     end
   end
+
+  def self.find_by_drug_name(drug_name)
+    @@all.find {|drug| drug.drug_name == drug_name}
+  end
+
 end
